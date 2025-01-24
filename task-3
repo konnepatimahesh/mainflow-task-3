@@ -1,0 +1,19 @@
+#code of the CRUD operations with mongoDB
+
+1. Insert new students
+db.students.insertMany([
+  { name: "Jane", age: 21, major: "Chemistry" },
+  { name: "Tom", age: 23, major: "Mathematics" }
+]);
+
+ 2. Read all students
+printjson(db.students.find().toArray());
+
+ 3. Update Tom's age to 24
+db.students.updateOne(
+  { name: "Tom" },
+  { $set: { age: 24 } }
+);
+
+ 4. Delete Jane from the collection
+db.students.deleteOne({ name: "Jane" });
